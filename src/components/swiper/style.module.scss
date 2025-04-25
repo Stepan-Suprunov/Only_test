@@ -1,0 +1,27 @@
+.swiperContainer {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.customSwiper {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.slide {
+  padding: 30px;
+  background: white;
+  height: auto;
+}
+
+.title {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.description {
+  color: #666;
+  line-height: 1.6;
+}

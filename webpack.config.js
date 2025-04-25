@@ -19,19 +19,35 @@ module.exports = {
                 use: 'ts-loader',
             },
             {
+                test: /\.s[ac]ss$/i,
+                exclude: /\.module\.s[ac]ss$/,
+                use: ['style-loader', 'css-loader', 'sass-loader']
+            },
+            {
                 test: /\.module\.s[ac]ss$/,
                 use: [
-                    "style-loader",
+                    'style-loader',
                     {
-                        loader: "css-loader",
+                        loader: 'css-loader',
                         options: {
                             modules: {
-                                localIdentName: "[name]__[local]--[hash:base64:5]",
+                                auto: true,
+                                localIdentName: '[name]__[local]--[hash:base64:5]',
+                                exportLocalsConvention: 'camelCase',
                             },
                         },
                     },
-                    "sass-loader",
+                    {
+                        loader: 'sass-loader',
+                        options: {
+                            implementation: require('sass'),
+                        },
+                    },
                 ],
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader']
             },
         ],
     },

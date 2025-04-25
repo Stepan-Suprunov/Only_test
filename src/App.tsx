@@ -1,9 +1,13 @@
 import React from 'react';
+import 'swiper/css';
+import {Swiper, Circle} from './components/index';
 
 function App() {
+
     return (
         <div>
-            <h1>Only тестовый проект</h1>
+            <Circle/>
+            <Swiper/>
         </div>
     );
 };
