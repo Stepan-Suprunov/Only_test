@@ -49,6 +49,13 @@ module.exports = {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader']
             },
+            {
+                test: /\.(woff|woff2|ttf)$/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/fonts/[name][ext]'
+                }
+            },
         ],
     },
     plugins: [
