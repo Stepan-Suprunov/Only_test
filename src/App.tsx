@@ -1,14 +1,14 @@
 import React from 'react';
-import 'swiper/css';
-import {Swiper, Circle} from './components/index';
-import {MainLayout} from './layouts/index';
+import { InfoBlock } from './components/index';
+import { MainLayout } from './layouts/index';
+import { events } from './data/data'
+
 
 function App() {
 
     return (
         <MainLayout>
-            <Circle pointsCount={4}/>
-            <Swiper/>
+            <InfoBlock events={events}/>
         </MainLayout>
     );
 };

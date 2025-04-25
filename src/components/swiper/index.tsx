@@ -1,29 +1,27 @@
 import styles from './style.module.scss'
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {SwiperEventType} from './types'
+import {Swiper as SwiperCore, SwiperSlide} from 'swiper/react';
+import {SwiperPropsType} from './types'
+import {Pagination} from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
-export function CustomSwiper() {
-
-    const events: SwiperEventType[] = [
-        { id: 1, title: 'Событие 1', description: 'Описание события 1' },
-        { id: 2, title: 'Событие 2', description: 'Описание события 2' },
-        { id: 3, title: 'Событие 3', description: 'Описание события 3' },
-    ];
-
+export function Swiper({ items }: SwiperPropsType) {
     return (
         <div className={styles.swiperContainer}>
-            <Swiper
-                spaceBetween={50}
-                slidesPerView={1}
-                className={styles.customSwiper}
-                >
-                {events.map((event) => (
-                    <SwiperSlide key={event.id} className={styles.slide}>
-                        <h3 className={styles.title}>{event.title}</h3>
-                        <p className={styles.description}>{event.description}</p>
+            <SwiperCore
+                modules={[Pagination]}
+                pagination={{ clickable: true }}
+                spaceBetween={60}
+                slidesPerView={3.5}
+                watchOverflow={true}
+            >
+                {items.map((item) => (
+                    <SwiperSlide key={item.id} className={styles.slide}>
+                        <h3 className={styles.title}>{item.title}</h3>
+                        <p className={styles.description}>{item.description}</p>
                     </SwiperSlide>
                 ))}
-            </Swiper>
+            </SwiperCore>
         </div>
     );
 };
