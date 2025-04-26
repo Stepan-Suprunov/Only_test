@@ -1,0 +1,31 @@
+.buttonsContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.navButton {
+  background: #ffffff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px 0 rgba(56, 119, 238, 0.1);
+
+  svg {
+    display: block;
+  }
+}
+
+.prevButton {
+  transform: rotate(0deg);
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}

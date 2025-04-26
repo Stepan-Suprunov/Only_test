@@ -1,25 +1,36 @@
 .swiperContainer {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 0 20px;
+  position: relative;
+  width: 1280px;
+  margin: 0 auto;
 }
 
-.customSwiper {
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.buttonsWrapper {
+  position: absolute;
+  top: 50%;
+  left: -4%;
+  right: -4%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
 }
 
 .slide {
-  padding: 30px;
-  background: white;
-  height: auto;
+  cursor: pointer;
 }
 
-.title {
-  font-size: 24px;
+.year {
+  font-family: 'Bebas Neue';
+  font-size: 25px;
+  line-height: 120%;
+  color: var(--color-blue);
   margin-bottom: 15px;
 }
 
 .description {
-  line-height: 1.6;
+  font-size: 20px;
+  line-height: 30px;
 }
+
+p, h3 {
+  margin: 0;
+};

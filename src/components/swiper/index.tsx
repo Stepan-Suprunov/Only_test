@@ -1,29 +1,51 @@
 import styles from './style.module.scss'
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {SwiperEventType} from './types'
+import { Swiper as SwiperCore, SwiperSlide } from 'swiper/react';
+import { Swiper as SwiperType } from 'swiper';
+import { Navigation } from 'swiper/modules';
+import { SwiperPropsType } from './types'
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import { formatDateToYear } from '../../utils';
+import { useState } from 'react';
+import { SwiperButtons } from './swiper-buttons';
 
-export function CustomSwiper() {
+export function Swiper({items}: SwiperPropsType) {
 
-    const events: SwiperEventType[] = [
-        { id: 1, title: 'Событие 1', description: 'Описание события 1' },
-        { id: 2, title: 'Событие 2', description: 'Описание события 2' },
-        { id: 3, title: 'Событие 3', description: 'Описание события 3' },
-    ];
+    const [swiperInstance, setSwiperInstance] = useState<SwiperType | null>(null);
+    const [isBeginning, setIsBeginning] = useState(true);
+    const [isEnd, setIsEnd] = useState(false);
 
     return (
-        <div className={styles.swiperContainer}>
-            <Swiper
-                spaceBetween={50}
-                slidesPerView={1}
-                className={styles.customSwiper}
+            <div className={styles.swiperContainer}>
+                <SwiperCore
+                    modules={[Navigation]}
+                    spaceBetween={85}
+                    slidesPerView={3.4}
+                    onSwiper={(swiper) => {
+                        setSwiperInstance(swiper);
+                        setIsBeginning(swiper.isBeginning);
+                        setIsEnd(swiper.isEnd);
+                    }}
+                    onSlideChange={(swiper) => {
+                        setIsBeginning(swiper.isBeginning);
+                        setIsEnd(swiper.isEnd);
+                    }}
                 >
-                {events.map((event) => (
-                    <SwiperSlide key={event.id} className={styles.slide}>
-                        <h3 className={styles.title}>{event.title}</h3>
-                        <p className={styles.description}>{event.description}</p>
-                    </SwiperSlide>
-                ))}
-            </Swiper>
-        </div>
+                    {items.map((item) => (
+                        <SwiperSlide key={item.id} className={styles.slide}>
+                            <h3 className={styles.year}>{formatDateToYear(item.eventDate)}</h3>
+                            <p className={styles.description}>{item.summary}</p>
+                        </SwiperSlide>
+                    ))}
+                </SwiperCore>
+                <SwiperButtons
+                    onPrev={() => swiperInstance?.slidePrev()}
+                    onNext={() => swiperInstance?.slideNext()}
+                    isBeginning={isBeginning}
+                    isEnd={isEnd}
+                    className={styles.buttonsWrapper}
+                />
+            </div>
     );
 };

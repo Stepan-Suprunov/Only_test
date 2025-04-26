@@ -1,11 +1,11 @@
-import React, {useEffect, useRef} from "react";
-import {gsap} from 'gsap';
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 import styles from './style.module.scss'
 import { CirclePropsType } from './types';
 
 export function Circle({pointsCount}: CirclePropsType) {
 
-    const circleRef = useRef<HTMLDivElement>(null);
+    const circleRef = useRef<HTMLDivElement | null>(null);
     const validatedCount = Math.min(Math.max(pointsCount, 2), 6);
 
     useEffect(() => {

@@ -1,5 +1,5 @@
-export type SwiperEventType = {
-    id: number;
-    title: string;
-    description: string;
+import { IEvent } from '../../data/types'
+
+export type SwiperPropsType = {
+    items: IEvent[];
 };
