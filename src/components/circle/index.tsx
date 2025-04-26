@@ -5,7 +5,7 @@ import { CirclePropsType } from './types';
 
 export function Circle({pointsCount}: CirclePropsType) {
 
-    const circleRef = useRef<HTMLDivElement>(null);
+    const circleRef = useRef<HTMLDivElement | null>(null);
     const validatedCount = Math.min(Math.max(pointsCount, 2), 6);
 
     useEffect(() => {

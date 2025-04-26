@@ -1,12 +1,27 @@
 .swiperContainer {
-  max-width: 1300px;
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
 }
 
-.slide {
+.buttonsWrapper {
+  position: absolute;
+  top: 50%;
+  left: -5%;
+  right: -5%;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
 }
 
-.title {
+.slide {
+  cursor: pointer;
+  width: 300px;
+  height: auto;
+}
+
+.year {
   color: #42567A;
   font-size: 24px;
   margin-bottom: 15px;
@@ -15,9 +30,4 @@
 .description {
   color: #5E7793;
   line-height: 1.6;
-}
-
-.swiper-pagination {
-  position: relative;
-  margin-top: 20px;
 }
