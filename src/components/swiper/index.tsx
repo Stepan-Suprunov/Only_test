@@ -20,8 +20,8 @@ export function Swiper({items}: SwiperPropsType) {
             <div className={styles.swiperContainer}>
                 <SwiperCore
                     modules={[Navigation]}
-                    spaceBetween={60}
-                    slidesPerView={3.5}
+                    spaceBetween={85}
+                    slidesPerView={3.4}
                     onSwiper={(swiper) => {
                         setSwiperInstance(swiper);
                         setIsBeginning(swiper.isBeginning);

@@ -1,5 +1,5 @@
-import React, {useEffect, useRef} from "react";
-import {gsap} from 'gsap';
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 import styles from './style.module.scss'
 import { CirclePropsType } from './types';
 

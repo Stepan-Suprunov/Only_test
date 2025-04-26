@@ -1,15 +1,14 @@
 .swiperContainer {
   position: relative;
-  max-width: 1200px;
+  width: 1280px;
   margin: 0 auto;
-  padding: 20px;
 }
 
 .buttonsWrapper {
   position: absolute;
   top: 50%;
-  left: -5%;
-  right: -5%;
+  left: -4%;
+  right: -4%;
   transform: translateY(-50%);
   display: flex;
   justify-content: space-between;
@@ -17,17 +16,21 @@
 
 .slide {
   cursor: pointer;
-  width: 300px;
-  height: auto;
 }
 
 .year {
-  color: #42567A;
-  font-size: 24px;
+  font-family: 'Bebas Neue';
+  font-size: 25px;
+  line-height: 120%;
+  color: var(--color-blue);
   margin-bottom: 15px;
 }
 
 .description {
-  color: #5E7793;
-  line-height: 1.6;
+  font-size: 20px;
+  line-height: 30px;
 }
+
+p, h3 {
+  margin: 0;
+};

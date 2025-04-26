@@ -33,5 +33,4 @@ export function SwiperButtons({
             </button>
         </div>
     );
-
 };
