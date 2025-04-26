@@ -1,14 +1,14 @@
 import React from 'react';
 import { InfoBlock } from './components/index';
 import { MainLayout } from './layouts/index';
-import { events } from './data/data'
+import { data } from './data/data'
 
 
 function App() {
 
     return (
         <MainLayout>
-            <InfoBlock events={events}/>
+            <InfoBlock events={data.events.results}/>
         </MainLayout>
     );
 };

@@ -17,8 +17,8 @@ export function Swiper({ items }: SwiperPropsType) {
             >
                 {items.map((item) => (
                     <SwiperSlide key={item.id} className={styles.slide}>
-                        <h3 className={styles.title}>{item.title}</h3>
-                        <p className={styles.description}>{item.description}</p>
+                        <h3 className={styles.title}>{item.eventDate}</h3>
+                        <p className={styles.description}>{item.summary}</p>
                     </SwiperSlide>
                 ))}
             </SwiperCore>

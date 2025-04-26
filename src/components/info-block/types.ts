@@ -1,5 +1,5 @@
-import {SwiperItemType} from '../swiper/types';
+import { IEvent } from '../../data/types'
 
 export type InfoBlockPropsType = {
-    events: SwiperItemType[];
+    events: IEvent[];
 };
