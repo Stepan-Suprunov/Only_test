@@ -6,7 +6,7 @@ import { InfoBlockLayout } from '../../layouts/index';
 export function InfoBlock({ events }: InfoBlockPropsType) {
     return (
         <InfoBlockLayout>
-            <Circle pointsCount={6}/>
+            <Circle items={[123,34235,34254,2354253,45,435532]}/>
             <Swiper items={events}/>
         </InfoBlockLayout>
     );
