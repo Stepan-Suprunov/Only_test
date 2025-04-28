@@ -1,0 +1,17 @@
+.counterContainer {
+  position: absolute;
+  top: 47%;
+  left: -44%;
+  display: flex;
+  gap: 90px;
+  font-size: 200px;
+  font-weight: 700;
+
+  .startDate {
+    color: var(--color-blue);
+  }
+
+  .endDate {
+    color: hotpink;
+  }
+}

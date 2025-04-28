@@ -25,3 +25,16 @@ export function sliceEvents(data: IEvent[], slicesCount: 2|3|4|5|6) {
 
     return result;
 };
+
+export function getMinMaxYears(items: Array<IEvent>): [number, number] {
+    const years: number[] = [];
+
+    for (const item of items) {
+        const yearMatch = item.uri.match(/\d{4}/);
+        if (yearMatch) {
+            years.push(parseInt(yearMatch[0], 10));
+        }
+    }
+
+    return [Math.min(...years), Math.max(...years)];
+};

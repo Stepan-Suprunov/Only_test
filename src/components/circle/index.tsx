@@ -2,7 +2,8 @@ import React, { useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import styles from './style.module.scss'
 import { CirclePropsType } from './types';
-import { CircleButtons, CirclePoint, Swiper } from '../index';
+import {AnimatedCounter, CircleButtons, CirclePoint, Swiper} from '../index';
+import { getMinMaxYears } from '../../utils';
 
 export function Circle({items}: CirclePropsType) {
 
@@ -44,6 +45,7 @@ export function Circle({items}: CirclePropsType) {
     return (
         <>
         <div className={styles.circleContainer}>
+            <AnimatedCounter dates={getMinMaxYears(items[activeIndex])}/>
             <CircleButtons
                 onNext={handleNext}
                 onPrev={handlePrev}
@@ -53,6 +55,7 @@ export function Circle({items}: CirclePropsType) {
             <div className={styles.circle} ref={circleRef}>
                 {Array.from({length: pointsCount}).map((_, index) => (
                     <CirclePoint
+                        key={index}
                         index={index}
                         activeIndex={activeIndex}
                         pointsCount={pointsCount}
