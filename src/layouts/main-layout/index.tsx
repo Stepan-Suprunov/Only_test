@@ -5,9 +5,7 @@ import { MainLayoutPropsType } from './types';
 export function MainLayout({ children }: MainLayoutPropsType) {
     return (
         <div className={styles.mainLayout}>
-            <div className={styles.content}>
                 {children}
-            </div>
         </div>
     );
 };

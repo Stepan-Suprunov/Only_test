@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import styles from './style.module.scss'
 import { CirclePropsType } from './types';
+import {CircleButtons} from "./circle-buttons";
 
 export function Circle({items}: CirclePropsType) {
 
@@ -9,7 +10,7 @@ export function Circle({items}: CirclePropsType) {
     const [activeIndex, setActiveIndex] = useState(0);
     const pointsCount = items.length;
 
-    function handlePointClick(index: number) {
+    function rotateCircle(index: number) {
         const angle = (360 / pointsCount) * index;
 
         gsap.to(circleRef.current, {
@@ -17,12 +18,37 @@ export function Circle({items}: CirclePropsType) {
             duration: 2,
             ease: 'power3.out'
         });
+    };
 
+    function handleNext() {
+        setActiveIndex(prev => {
+            const newIndex = prev === pointsCount - 1 ? prev : prev + 1;
+            rotateCircle(newIndex);
+            return newIndex;
+        });
+    };
+
+    function handlePrev() {
+        setActiveIndex(prev => {
+            const newIndex = prev === 0 ? prev : prev - 1;
+            rotateCircle(newIndex);
+            return newIndex;
+        });
+    };
+
+    function handlePointClick(index: number) {
+        rotateCircle(index);
         setActiveIndex(index);
     };
 
     return (
         <div className={styles.circleContainer}>
+            <CircleButtons
+                onNext={handleNext}
+                onPrev={handlePrev}
+                currentIndex={activeIndex}
+                totalCount={pointsCount}
+            />
             <div className={styles.circle} ref={circleRef}>
                 {Array.from({length: pointsCount}).map((_, index) => {
                     const angle = (360 / pointsCount) * index - 60; // расчитываем угол расположения активной точки
