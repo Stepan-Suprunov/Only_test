@@ -28,6 +28,7 @@
 }
 
 :root {
+  --color-background: #F4F5F9;
   --color-black-blue: #42567A;
   --color-blue: #3877EE;
 }
@@ -37,4 +38,5 @@ body {
   padding: 0;
   font-family: 'PT Sans';
   color: var(--color-black-blue);
+  background-color: var(--color-background);
 }

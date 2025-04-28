@@ -3,7 +3,33 @@
   flex-direction: column;
   align-items: center;
   gap: 96px;
-  padding: 215px 0;
-  margin: 0 auto;
-  width: 100%;
+  margin-left: 160px;
+  width: 1440px;
+  height: 1080px;
+  border: solid rgba(66, 86, 122, 0.2) 1px;
+}
+
+.linesContainer {
+  position: absolute;
+  margin-left: 160px;
+  width: 1440px;
+  height: 1080px;
+
+  .horizontalLine {
+    position: absolute;
+    top: 44.5%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(66, 86, 122, 0.2);;
+  }
+
+  .verticalLine {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: rgba(66, 86, 122, 0.2);;
+  }
 }

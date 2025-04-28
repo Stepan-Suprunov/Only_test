@@ -1,3 +1,7 @@
 export { Circle } from './circle/index'
+export { CircleButtons } from './circle-buttons/index'
+export { CirclePoint } from './circle-point/index'
 export { Swiper } from './swiper/index'
+export { SwiperButtons } from './swiper-buttons/index'
 export { InfoBlock } from './info-block/index'
+export { AnimatedCounter } from './animated-counter/index'

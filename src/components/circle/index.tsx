@@ -1,42 +1,70 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import styles from './style.module.scss'
 import { CirclePropsType } from './types';
+import {AnimatedCounter, CircleButtons, CirclePoint, Swiper} from '../index';
+import { getMinMaxYears } from '../../utils';
 
-export function Circle({pointsCount}: CirclePropsType) {
+export function Circle({items}: CirclePropsType) {
 
     const circleRef = useRef<HTMLDivElement | null>(null);
-    const validatedCount = Math.min(Math.max(pointsCount, 2), 6);
+    const [activeIndex, setActiveIndex] = useState(0);
+    const pointsCount = items.length;
 
-    useEffect(() => {
-        if (circleRef.current) {
-            gsap.to(circleRef.current, {
-                rotation: 360,
-                duration: 3,
-                repeat: -1,
-            });
-        }
-    }, []);
+    function rotateCircle(index: number) {
+        const angle = (360 / pointsCount) * index;
+
+        gsap.to(circleRef.current, {
+            rotation: -angle,
+            duration: 2,
+            ease: 'power3.out'
+        });
+    };
+
+    function handleNext() {
+        setActiveIndex(prev => {
+            const newIndex = prev === pointsCount - 1 ? prev : prev + 1;
+            rotateCircle(newIndex);
+            return newIndex;
+        });
+    };
+
+    function handlePrev() {
+        setActiveIndex(prev => {
+            const newIndex = prev === 0 ? prev : prev - 1;
+            rotateCircle(newIndex);
+            return newIndex;
+        });
+    };
+
+    function handlePointClick(index: number) {
+        rotateCircle(index);
+        setActiveIndex(index);
+    };
 
     return (
-        <div className={styles.circle} ref={circleRef}>
-            {Array.from({ length: validatedCount }).map((_, index) => {
-                const angle = (360 / validatedCount) * index - 90; // -90° чтобы начать сверху
-                const x = 50 + 50 * Math.cos((angle * Math.PI) / 180);
-                const y = 50 + 50 * Math.sin((angle * Math.PI) / 180);
-
-                return (
-                    <div
+        <>
+        <div className={styles.circleContainer}>
+            <AnimatedCounter dates={getMinMaxYears(items[activeIndex])}/>
+            <CircleButtons
+                onNext={handleNext}
+                onPrev={handlePrev}
+                currentIndex={activeIndex}
+                totalCount={pointsCount}
+            />
+            <div className={styles.circle} ref={circleRef}>
+                {Array.from({length: pointsCount}).map((_, index) => (
+                    <CirclePoint
                         key={index}
-                        className={styles.point}
-                        style={{
-                            left: `${x}%`,
-                            top: `${y}%`,
-                            transform: 'translate(-50%, -50%)',
-                        }}
+                        index={index}
+                        activeIndex={activeIndex}
+                        pointsCount={pointsCount}
+                        onClick={handlePointClick}
                     />
-                );
-            })}
+                ))}
+            </div>
         </div>
+            <Swiper items={items[activeIndex]}/>
+        </>
     );
 };
