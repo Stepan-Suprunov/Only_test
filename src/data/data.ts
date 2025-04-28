@@ -2,7 +2,7 @@ import {IEventRegistryResponse} from './types';
 
 // https://eventregistry.org/api/v1/event/getEvents?apiKey=0a0d3806-0582-49d5-b7bd-95b7fee77ea2&dateStart=1985-01-01&dateEnd=2025-12-31&lang=rus
 
-// export const data: IEventRegistryResponse = {
+// export const dataDepr: IEventRegistryResponse = {
 //     "events": {
 //         "results": [
 //             {

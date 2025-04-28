@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import styles from './style.module.scss'
 import { CirclePropsType } from './types';
-import { CircleButtons, CirclePoint } from '../index';
+import { CircleButtons, CirclePoint, Swiper } from '../index';
 
 export function Circle({items}: CirclePropsType) {
 
@@ -42,6 +42,7 @@ export function Circle({items}: CirclePropsType) {
     };
 
     return (
+        <>
         <div className={styles.circleContainer}>
             <CircleButtons
                 onNext={handleNext}
@@ -60,5 +61,7 @@ export function Circle({items}: CirclePropsType) {
                 ))}
             </div>
         </div>
+            <Swiper items={items[activeIndex]}/>
+        </>
     );
 };
