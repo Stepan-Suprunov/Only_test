@@ -7,6 +7,7 @@ export function InfoBlock({ events }: InfoBlockPropsType) {
     return (
         <InfoBlockLayout>
             <Circle items={[123,34235,34254,2354253,45,435532]}/>
+            {/*<Circle items={events}/>*/}
             <Swiper items={events}/>
         </InfoBlockLayout>
     );

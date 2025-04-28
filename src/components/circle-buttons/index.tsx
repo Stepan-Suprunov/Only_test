@@ -1,4 +1,4 @@
-import { CircleButtonsPropsType } from './type';
+import { CircleButtonsPropsType } from './types';
 import styles from './style.module.scss'
 
 export function CircleButtons({ onNext, onPrev, currentIndex, totalCount }: CircleButtonsPropsType) {

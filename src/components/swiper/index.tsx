@@ -8,7 +8,7 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { formatDateToYear } from '../../utils';
 import { useState } from 'react';
-import { SwiperButtons } from './swiper-buttons';
+import { SwiperButtons } from '../index';
 
 export function Swiper({items}: SwiperPropsType) {
 

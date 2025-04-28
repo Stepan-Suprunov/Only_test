@@ -13,37 +13,3 @@
   position: relative;
   transition: transform 0.3s ease-out;
 }
-
-.point {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  border: none;
-  background: var(--color-black-blue);
-  cursor: pointer;
-  padding: 0;
-  transition: 0.3s ease;
-
-  &:hover, &.active {
-    width: 56px;
-    height: 56px;
-    background: var(--color-background);
-    border: 1px solid rgba(66, 86, 122, 0.5);
-    transition: 0.3s ease;
-
-    .pointNumber {
-      display: block;
-    }
-  }
-}
-
-.pointNumber {
-  position: absolute;
-  color: var(--color-black-blue);
-  font-size: 20px;
-  top: 50%;
-  left: 50%;
-  display: none;
-  transform: translate(-50%, -50%) rotate(0deg) !important;
-}
