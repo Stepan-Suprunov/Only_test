@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { gsap } from 'gsap';
 import styles from './style.module.scss'
 import { CirclePropsType } from './types';
-import { AnimatedCounter, CircleButtons, Swiper } from '../index';
+import {AnimatedCounter, CircleButtons, Dropdown, Swiper} from '../index';
 import { getMinMaxYears } from '../../utils';
+import { IEvent } from '../../data/types';
 
 export function Circle({ items }: CirclePropsType) {
 
-    const [activeIndex, setActiveIndex] = useState(0);
+    const [activeIndex, setActiveIndex] = useState<number>(0);
+    const [filteredEvents, setFilteredEvents] = useState<IEvent[]>([]);
     const pointsCount = items.length;
 
     function rotateCircle(index: number) {
@@ -50,6 +52,7 @@ export function Circle({ items }: CirclePropsType) {
     return (
         <>
             <div className={styles.circleContainer}>
+                <Dropdown items={items[activeIndex]} onSelect={setFilteredEvents}/>
                 <AnimatedCounter dates={getMinMaxYears(items[activeIndex])}/>
                 <CircleButtons
                     onNext={handleNext}
@@ -83,7 +86,7 @@ export function Circle({ items }: CirclePropsType) {
                     )}
                 </div>
             </div>
-            <Swiper items={items[activeIndex]}/>
+            <Swiper items={filteredEvents}/>
         </>
     );
 };

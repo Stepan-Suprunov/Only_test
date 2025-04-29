@@ -1,5 +1,5 @@
 import styles from './style.module.scss'
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { AnimatedCounterPropsType } from './types';
 
@@ -31,7 +31,7 @@ export function AnimatedCounter({ dates }: AnimatedCounterPropsType) {
         });
 
         return (() => {
-            prevDates[dates[0], dates[1]]
+            prevDates[dates[0], dates[1]];
         });
     }, [dates]);
 

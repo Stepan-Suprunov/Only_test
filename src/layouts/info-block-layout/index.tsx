@@ -1,6 +1,6 @@
 import { InfoBlockLayoutPropsType } from './types';
 import styles from './style.module.scss'
-import React from "react";
+import React from 'react';
 
 export function InfoBlockLayout({ children }: InfoBlockLayoutPropsType) {
     return (

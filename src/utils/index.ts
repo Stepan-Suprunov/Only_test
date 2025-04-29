@@ -1,4 +1,4 @@
-import { IEvent } from "../data/types";
+import { IEvent } from '../data/types';
 
 export function formatDateToYear(dateString: string): number {
     return new Date(dateString).getFullYear();
@@ -12,7 +12,7 @@ export function sliceEvents(data: IEvent[], slicesCount: 2|3|4|5|6) {
     });
 
     const chunkSize = Math.ceil(sortedData.length / slicesCount);
-    const result: Array<Array<any>> = [];
+    const result: Array<Array<IEvent>> = [];
 
     for (let i = 0; i < slicesCount; i++) {
         const start = i * chunkSize;
