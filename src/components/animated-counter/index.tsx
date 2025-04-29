@@ -1,15 +1,16 @@
 import styles from './style.module.scss'
-import React, { useEffect, useRef } from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import { gsap } from 'gsap';
 import { AnimatedCounterPropsType } from './types';
 
 export function AnimatedCounter({ dates }: AnimatedCounterPropsType) {
-    const numberRefs = [useRef(null), useRef(null)];
+
+    const prevDates: [number,number] = [0, 0];
 
     useEffect(() => {
-        gsap.to(numberRefs[0].current, {
+        gsap.to(`.${styles.startDate}`, {
             innerText: dates[0],
-            duration: 1,
+            duration: .5,
             snap: { innerText: 1 },
             modifiers: {
                 innerText: function(innerText) {
@@ -18,22 +19,26 @@ export function AnimatedCounter({ dates }: AnimatedCounterPropsType) {
             }
         });
 
-        gsap.to(numberRefs[1].current, {
+        gsap.to(`.${styles.endDate}`, {
             innerText: dates[1],
-            duration: 1,
+            duration: .5,
             snap: { innerText: 1 },
             modifiers: {
                 innerText: function(innerText) {
                     return Math.floor(innerText);
                 }
             }
+        });
+
+        return (() => {
+            prevDates[dates[0], dates[1]]
         });
     }, [dates]);
 
     return (
         <div className={styles.counterContainer}>
-            <div ref={numberRefs[0]} className={styles.startDate}>{dates[0]}</div>
-            <div ref={numberRefs[1]} className={styles.endDate}>{dates[1]}</div>
+            <div className={styles.startDate}>{prevDates[0]}</div>
+            <div className={styles.endDate}>{prevDates[1]}</div>
         </div>
     );
 };
