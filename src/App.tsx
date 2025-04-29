@@ -8,7 +8,10 @@ function App() {
 
     return (
         <MainLayout>
-            <InfoBlock events={data.events.results}/>
+            <InfoBlock
+                events={data.events.results}
+                segmentsCount={6}
+            />
         </MainLayout>
     );
 };

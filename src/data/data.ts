@@ -1,4 +1,4 @@
-import {IEventRegistryResponse} from './types';
+import { IEventRegistryResponse } from './types';
 
 export const data: IEventRegistryResponse = {
     events: {
