@@ -1,0 +1,21 @@
+.titleWrapper {
+  position: absolute;
+  display: flex;
+  height: 120px;
+  left: -456px;
+  gap: 78px;
+
+  .stripe {
+    height: 100%;
+    width: 5px;
+    background: linear-gradient(to bottom, var(--color-blue), var(--color-pink));
+  }
+
+  .title {
+    width: 353px;
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--color-black-blue);
+    line-height: 120%;
+  }
+}

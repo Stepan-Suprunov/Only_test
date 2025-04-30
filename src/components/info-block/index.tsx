@@ -1,5 +1,5 @@
 import { InfoBlockPropsType } from './types';
-import { AnimatedCounter, CircleButtons, Dropdown, Lines, Swiper } from '../index';
+import {AnimatedCounter, CircleButtons, Dropdown, Lines, Swiper, Title} from '../index';
 import React, { useState } from 'react';
 import { getMinMaxYears, sliceEvents } from '../../utils';
 import { IEvent } from '../../data/types';
@@ -55,6 +55,7 @@ export function InfoBlock({events, segmentsCount}: InfoBlockPropsType) {
             <Lines/>
             <div className={styles.infoBlockLayout}>
                 <div className={styles.circleContainer}>
+                    <Title title={'Исторические даты'}/>
                     <Dropdown items={items[activeIndex]} onSelect={setFilteredEvents}/>
                     <AnimatedCounter dates={getMinMaxYears(items[activeIndex])}/>
                     <CircleButtons
