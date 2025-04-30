@@ -15,3 +15,36 @@
     color: var(--color-pink);
   }
 }
+
+@media (max-width: 1465px) {
+  .counterContainer {
+    top: 290px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .counterContainer {
+    gap: 70px;
+    font-size: 130px;
+    top: 250px;
+    left: -130px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .counterContainer {
+    gap: 30px;
+    font-size: 80px;
+    top: 200px;
+    left: -45px;
+  }
+}
+
+@media (max-width: 768px) {
+  .counterContainer {
+    gap: 30px;
+    font-size: 56px;
+    top: 200px;
+    left: 8px;
+  }
+}

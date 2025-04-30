@@ -62,3 +62,64 @@
     }
   }
 }
+
+@media (max-width: 1650px) {
+  .infoBlockWrapper .infoBlockLayout {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1465px) {
+  .infoBlockWrapper .infoBlockLayout {
+    width: 1280px;
+    height: 960px;
+
+    .circleContainer {
+      padding-top: 160px;
+    }
+  }
+}
+
+@media (max-width: 1300px) {
+  .infoBlockWrapper .infoBlockLayout {
+    width: 1020px;
+    height: 765px;
+    gap: 65px;
+
+    .circleContainer {
+      padding-top: 139px;
+      width: 400px;
+      height: 400px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .infoBlockWrapper .infoBlockLayout {
+    width: 764px;
+    height: 573px;
+    gap: 40px;
+
+    .circleContainer {
+      padding-top: 103px;
+      width: 300px;
+      height: 300px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .infoBlockWrapper .infoBlockLayout {
+    width: 316px;
+    height: 564px;
+    gap: 120px;
+
+    .circleContainer {
+      height: 100px;
+
+      .circle {
+        display: none;
+      }
+    }
+  }
+}

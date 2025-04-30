@@ -22,3 +22,42 @@
     background: rgba(66, 86, 122, 0.2);;
   }
 }
+
+@media (max-width: 1650px) {
+  .linesContainer {
+    margin: 0;
+  }
+}
+
+@media (max-width: 1465px) {
+  .linesContainer {
+    width: 1280px;
+    height: 960px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .linesContainer {
+    width: 1020px;
+    height: 765px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .linesContainer {
+    width: 764px;
+    height: 573px;
+  }
+}
+
+@media (max-width: 768px) {
+  .linesContainer {
+    width: 300px;
+    margin-left: 10px;
+    margin-top: 60px;
+
+    .verticalLine {
+      visibility: hidden;
+    }
+  }
+}

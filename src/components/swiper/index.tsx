@@ -21,7 +21,12 @@ export function Swiper({items}: SwiperPropsType) {
                 <SwiperCore
                     modules={[Navigation]}
                     spaceBetween={85}
-                    slidesPerView={3.4}
+                    slidesPerView={1.2}
+                    breakpoints={{
+                        1465: {slidesPerView: 3.4},
+                        1024: {slidesPerView: 3},
+                        320: {slidesPerView: 2}
+                    }}
                     onSwiper={(swiper) => {
                         setSwiperInstance(swiper);
                         setIsBeginning(swiper.isBeginning);

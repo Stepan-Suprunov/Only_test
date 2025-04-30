@@ -70,3 +70,63 @@
 @keyframes fadeIn {
   to { opacity: 1; }
 }
+
+@media (max-width: 1465px) {
+  .dropdownWrapper {
+    left: 430px;
+    top: 178px;
+  }
+
+  .dropdown {
+    font-size: 16px;
+  }
+
+  .select {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .dropdownWrapper {
+    left: 330px;
+    top: 148px;
+
+    .dropdown {
+      font-size: 12px;
+    }
+
+    .select {
+      font-size: 12px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .dropdownWrapper {
+    left: 252px;
+    top: 105px;
+
+    .dropdown {
+      font-size: 10px;
+    }
+
+    .select {
+      font-size: 10px;
+    }
+
+    .option {
+      padding: 8px 2px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .dropdownWrapper {
+    left: 0;
+    top: 160px;
+
+    .option {
+      padding: 8px 3px;
+    }
+  }
+}

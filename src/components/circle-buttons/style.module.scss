@@ -37,3 +37,45 @@
   opacity: 50%;
   cursor: default;
 }
+
+@media (max-width: 1465px) {
+  .buttonsContainer {
+    top: 630px;
+    left: -340px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .buttonsContainer {
+    top: 500px;
+    left: -280px;
+
+    .counter {
+      font-size: 10px;
+      margin-bottom: 10px;
+    }
+
+    .button {
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .buttonsContainer {
+    top: 350px;
+    left: -217px;
+  }
+}
+
+@media (max-width: 768px) {
+  .buttonsContainer {
+    top: 480px;
+    left: 10px;
+
+    .counter {
+      font-size: 14px;
+    }
+  }
+}
